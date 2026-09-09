@@ -188,7 +188,7 @@
       {
         "file": "assets/shooting.png",
         "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/shooting.png\"}",
         "name": "shooting",
         "smoothed": true,
         "userAdded": false
@@ -196,7 +196,7 @@
       {
         "file": "assets/shooting2.png",
         "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/shooting2.png\"}",
         "name": "shooting2",
         "smoothed": true,
         "userAdded": false
@@ -544,7 +544,7 @@
           "name": "1",
           "persistentUuid": "ecbc745f-5927-483a-acb6-b7b6a3712a2d",
           "type": "number",
-          "value": 25
+          "value": 2
         },
         {
           "name": "2",
@@ -650,12 +650,6 @@
           "updateIfNotVisible": false,
           "variables": [
             {
-              "name": "isDraggingShot",
-              "persistentUuid": "d11a4b9c-442b-4a9c-89ba-954d9da3eec3",
-              "type": "boolean",
-              "value": false
-            },
-            {
               "name": "readyToShoot",
               "persistentUuid": "8359386b-f23e-4355-9bc1-7675d9c908d4",
               "type": "boolean",
@@ -742,7 +736,7 @@
                 {
                   "looping": false,
                   "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 1,
+                  "timeBetweenFrames": 0.15,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
@@ -1249,6 +1243,16 @@
                     "",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ArrowsLeft",
+                    ">",
+                    "0"
+                  ]
                 }
               ],
               "actions": [
@@ -1399,7 +1403,7 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "teste area"
+              "comment": "test area"
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -2147,65 +2151,6 @@
             "includeConfig": 0
           },
           "target": "HudEvents"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "DraggableBehavior::Dropped"
-              },
-              "parameters": [
-                "Archer",
-                "Draggable"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Archer",
-                "Animation",
-                "=",
-                "\"shooting\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Arrow",
-                "released",
-                "True",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "ArrowsLeft",
-                "-",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Archer",
-                "Animation",
-                "=",
-                "\"idle\""
-              ]
-            }
-          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
