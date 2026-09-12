@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 281,
+    "build": 282,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -198,6 +198,22 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/shooting2.png\"}",
         "name": "shooting2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/yellow-baloon.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/yellow-baloon.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/yellow-balloon-down.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"assets/yellow-balloon-down.png\",\"extension\":\".png\"}",
+        "name": "assets/yellow-balloon-down.png",
         "smoothed": true,
         "userAdded": false
       }
@@ -544,7 +560,7 @@
           "name": "1",
           "persistentUuid": "ecbc745f-5927-483a-acb6-b7b6a3712a2d",
           "type": "number",
-          "value": 2
+          "value": 25
         },
         {
           "name": "2",
@@ -1862,6 +1878,16 @@
                 "\"info\"",
                 "\"\""
               ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Level_2\"",
+                ""
+              ]
             }
           ]
         },
@@ -2090,17 +2116,717 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.875,
+        "zoomFactor": 0.7412978919222363,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
       },
       "objectsGroups": [],
-      "variables": [],
-      "instances": [],
-      "objects": [],
+      "variables": [
+        {
+          "name": "levelStartRedBalloons",
+          "persistentUuid": "dab7e36f-f074-406e-9416-6587e6204c50",
+          "type": "number",
+          "value": 12
+        },
+        {
+          "name": "startRedBalloonXPos",
+          "persistentUuid": "4227a7a0-c987-4d1b-a8cf-ab72bc1a9e82",
+          "type": "number",
+          "value": 730
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "a69254fc-c725-4840-a558-541f661a27a5",
+          "width": 33,
+          "x": 271,
+          "y": 752,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "ea1e8051-c190-447a-af97-25a522caa584",
+          "width": 33,
+          "x": 321,
+          "y": 793,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "ccb80030-43ff-43da-ba06-2ddd0e866af9",
+          "width": 33,
+          "x": 351,
+          "y": 769,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "a41eedb1-8248-4b3c-8c85-638b6222bee9",
+          "width": 33,
+          "x": 383,
+          "y": 794,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "651f3997-f6d6-4456-9afb-0d8315ceb659",
+          "width": 33,
+          "x": 417,
+          "y": 608,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "2b7664c8-db4e-4719-a330-d75ac24684ce",
+          "width": 33,
+          "x": 471,
+          "y": 673,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "1a29c816-ac52-4201-abae-1459c3794ffd",
+          "width": 33,
+          "x": 532,
+          "y": 749,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "20d12038-d342-4956-b312-7237ff562202",
+          "width": 33,
+          "x": 568,
+          "y": 770,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "a93187aa-27d5-472d-88fd-82e8b9461fc8",
+          "width": 33,
+          "x": 598,
+          "y": 744,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "3ce325a9-dae4-4bd2-837c-553905348eb2",
+          "width": 33,
+          "x": 640,
+          "y": 607,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "dba5ff36-d3f2-45e4-92c4-9cb86f126886",
+          "width": 33,
+          "x": 694,
+          "y": 748,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "RedBalloon",
+          "persistentUuid": "74d85ebf-0377-4da1-abbc-9e6c82f8dac1",
+          "width": 33,
+          "x": 747,
+          "y": 787,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "YellowBalloon",
+          "persistentUuid": "8dc79142-64c5-4cc9-9d92-f1b6086e710e",
+          "width": 33,
+          "x": 594,
+          "y": 620,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "YellowBalloon",
+          "persistentUuid": "1210e486-ec69-4eb0-b3ee-bcec40774c58",
+          "width": 33,
+          "x": 705,
+          "y": 643,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "speed",
+              "persistentUuid": "eb84318f-9fef-4188-bd12-8687565b83d3",
+              "type": "number",
+              "value": 90
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 52.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "YellowBalloon",
+          "persistentUuid": "792c5836-6fea-475e-917b-f983a54f3745",
+          "width": 33,
+          "x": 763,
+          "y": 590,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "speed",
+              "persistentUuid": "eb84318f-9fef-4188-bd12-8687565b83d3",
+              "type": "number",
+              "value": 100
+            }
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "RedBalloon",
+          "persistentUuid": "3c0f2c4b-cf5b-4212-ae8c-92d48c0c029d",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "state",
+              "persistentUuid": "93d498d2-c7fa-4cf6-9ae1-793ce2b7b00b",
+              "type": "string",
+              "value": "up"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "up",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "baloon.png",
+                      "points": [
+                        {
+                          "name": "Bottom",
+                          "x": 27.5,
+                          "y": 87.5
+                        },
+                        {
+                          "name": "Top",
+                          "x": 27.5,
+                          "y": 0
+                        },
+                        {
+                          "name": "Point",
+                          "x": 0,
+                          "y": 0
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 62.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 62.5
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "down",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "balloon-down.png",
+                      "points": [
+                        {
+                          "name": "Bottom",
+                          "x": 27.5,
+                          "y": 87.5
+                        },
+                        {
+                          "name": "Top",
+                          "x": 27.5,
+                          "y": 0
+                        },
+                        {
+                          "name": "Point",
+                          "x": 0,
+                          "y": 0
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 62.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 62.5
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "down",
+                      "points": [
+                        {
+                          "name": "Bottom",
+                          "x": 27.5,
+                          "y": 87.5
+                        },
+                        {
+                          "name": "Top",
+                          "x": 27.5,
+                          "y": 0
+                        },
+                        {
+                          "name": "Point",
+                          "x": 0,
+                          "y": 0
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 62.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 62.5
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "YellowBalloon",
+          "persistentUuid": "e707d251-98fc-4ccd-b75d-8b943836232e",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "state",
+              "persistentUuid": "116607be-7b61-4eba-aed6-be382248266f",
+              "type": "string",
+              "value": "up"
+            },
+            {
+              "name": "speed",
+              "persistentUuid": "eb84318f-9fef-4188-bd12-8687565b83d3",
+              "type": "number",
+              "value": 80
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "up",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/yellow-baloon.png",
+                      "points": [
+                        {
+                          "name": "Bottom",
+                          "x": 27.5,
+                          "y": 87.5
+                        },
+                        {
+                          "name": "Top",
+                          "x": 27.5,
+                          "y": 0
+                        },
+                        {
+                          "name": "Point",
+                          "x": 0,
+                          "y": 0
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 62.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 62.5
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "down",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/yellow-balloon-down.png",
+                      "points": [
+                        {
+                          "name": "Bottom",
+                          "x": 27.5,
+                          "y": 87.5
+                        },
+                        {
+                          "name": "Top",
+                          "x": 27.5,
+                          "y": 0
+                        },
+                        {
+                          "name": "Point",
+                          "x": 0,
+                          "y": 0
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 62.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 62.5
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/yellow-balloon-down.png",
+                      "points": [
+                        {
+                          "name": "Bottom",
+                          "x": 27.5,
+                          "y": 87.5
+                        },
+                        {
+                          "name": "Top",
+                          "x": 27.5,
+                          "y": 0
+                        },
+                        {
+                          "name": "Point",
+                          "x": 0,
+                          "y": 0
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 0
+                          },
+                          {
+                            "x": 55,
+                            "y": 62.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 62.5
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "objectsFolderStructure": {
-        "folderName": "__ROOT"
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "RedBalloon"
+          },
+          {
+            "objectName": "YellowBalloon"
+          }
+        ]
       },
       "events": [
         {
@@ -2151,6 +2877,339 @@
             "includeConfig": 0
           },
           "target": "HudEvents"
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Red Balloon",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "RedBalloon",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "aiGeneratedEventId": "01M1Y1NJ0CMBR1ZCWMK4ZHZYZD",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringObjectVariable"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        "state",
+                        "=",
+                        "BalloonState.Up"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetY"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        "=",
+                        "RedBalloon.Y() - 70 * TimeDelta()"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "RedBalloon.PointY(\"Bottom\")",
+                            "<",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetY"
+                          },
+                          "parameters": [
+                            "RedBalloon",
+                            "=",
+                            "SceneWindowHeight() + 70"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M1Y468MJ5S9M5FHJ97NW3HXY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "RedBalloon",
+                    "state",
+                    "=",
+                    "BalloonState.Hit"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "RedBalloon",
+                    "=",
+                    "RedBalloon.Y() + 100 * TimeDelta()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringObjectVariable"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        "state",
+                        "=",
+                        "BalloonState.Hit"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        "Animation",
+                        "=",
+                        "\"down\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        ">",
+                        "SceneWindowHeight()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Yellow Balloon",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "YellowBalloon",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "aiGeneratedEventId": "01M1Y1NJ0CMBR1ZCWMK4ZHZYZD",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringObjectVariable"
+                      },
+                      "parameters": [
+                        "YellowBalloon",
+                        "state",
+                        "=",
+                        "BalloonState.Up"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetY"
+                      },
+                      "parameters": [
+                        "YellowBalloon",
+                        "=",
+                        "YellowBalloon.Y() - YellowBalloon.speed * TimeDelta()"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "RedBalloon.PointY(\"Bottom\")",
+                            "<",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetY"
+                          },
+                          "parameters": [
+                            "YellowBalloon",
+                            "=",
+                            "SceneWindowHeight() + 70"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M1Y468MJ5S9M5FHJ97NW3HXY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "YellowBalloon",
+                    "state",
+                    "=",
+                    "BalloonState.Hit"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "YellowBalloon",
+                    "=",
+                    "RedBalloon.Y() + 100 * TimeDelta()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringObjectVariable"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        "state",
+                        "=",
+                        "BalloonState.Hit"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "YellowBalloon",
+                        "Animation",
+                        "=",
+                        "\"down\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "RedBalloon",
+                        ">",
+                        "SceneWindowHeight()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "YellowBalloon",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -2376,6 +3435,16 @@
                 "ArrowHudIndex",
                 "=",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ArrowHudStartPosX",
+                "=",
+                "780"
               ]
             }
           ],
