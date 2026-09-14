@@ -469,6 +469,277 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "Archer",
+      "persistentUuid": "6c65780a-f1cb-469d-824d-0577fec197fa",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "readyToShoot",
+          "persistentUuid": "8359386b-f23e-4355-9bc1-7675d9c908d4",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Draggable",
+          "type": "DraggableBehavior::Draggable",
+          "checkCollisionMask": false
+        }
+      ],
+      "animations": [
+        {
+          "name": "idle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/archer-without-arrow.png",
+                  "points": [
+                    {
+                      "name": "Top",
+                      "x": 62,
+                      "y": 25.5
+                    },
+                    {
+                      "name": "Bottom",
+                      "x": 62,
+                      "y": 89.5
+                    },
+                    {
+                      "name": "ArrowStart",
+                      "x": 58,
+                      "y": 44
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 62,
+                    "y": 62
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 124
+                      },
+                      {
+                        "x": 0,
+                        "y": 124
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "shooting",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.15,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "shooting2",
+                  "points": [
+                    {
+                      "name": "Top",
+                      "x": 62,
+                      "y": 25.5
+                    },
+                    {
+                      "name": "Bottom",
+                      "x": 62,
+                      "y": 89.5
+                    },
+                    {
+                      "name": "ArrowStart",
+                      "x": 58,
+                      "y": 44
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 62,
+                    "y": 62
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 124
+                      },
+                      {
+                        "x": 0,
+                        "y": 124
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "shooting",
+                  "points": [
+                    {
+                      "name": "Top",
+                      "x": 62,
+                      "y": 25.5
+                    },
+                    {
+                      "name": "Bottom",
+                      "x": 62,
+                      "y": 89.5
+                    },
+                    {
+                      "name": "ArrowStart",
+                      "x": 58,
+                      "y": 44
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 62,
+                    "y": 62
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 124
+                      },
+                      {
+                        "x": 0,
+                        "y": 124
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "loaded",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/archer-loaded.png",
+                  "points": [
+                    {
+                      "name": "Top",
+                      "x": 62,
+                      "y": 25.5
+                    },
+                    {
+                      "name": "Bottom",
+                      "x": 62,
+                      "y": 89.5
+                    },
+                    {
+                      "name": "ArrowStart",
+                      "x": 58,
+                      "y": 44
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 62,
+                    "y": 62
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 0
+                      },
+                      {
+                        "x": 117,
+                        "y": 124
+                      },
+                      {
+                        "x": 0,
+                        "y": 124
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -488,6 +759,9 @@
       },
       {
         "objectName": "Arrow"
+      },
+      {
+        "objectName": "Archer"
       }
     ]
   },
@@ -544,6 +818,11 @@
           "value": "loaded"
         }
       ]
+    },
+    {
+      "name": "ArcherXPosition",
+      "type": "number",
+      "value": 20
     },
     {
       "name": "CurrentLevel",
@@ -620,12 +899,6 @@
       "objectsGroups": [],
       "variables": [
         {
-          "name": "archerXPosition",
-          "persistentUuid": "cc81e805-fa74-44eb-b366-f17f0e731fb1",
-          "type": "number",
-          "value": 20
-        },
-        {
           "name": "startBalloonXPos",
           "persistentUuid": "2f65d754-18cb-4343-a41b-a827e564afe3",
           "type": "number",
@@ -649,7 +922,7 @@
           "persistentUuid": "388cd04b-9154-4747-8f89-2cde4530017a",
           "width": 0,
           "x": 10,
-          "y": 143,
+          "y": 157,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -657,277 +930,6 @@
         }
       ],
       "objects": [
-        {
-          "adaptCollisionMaskAutomatically": false,
-          "assetStoreId": "",
-          "name": "Archer",
-          "persistentUuid": "6c65780a-f1cb-469d-824d-0577fec197fa",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [
-            {
-              "name": "readyToShoot",
-              "persistentUuid": "8359386b-f23e-4355-9bc1-7675d9c908d4",
-              "type": "boolean",
-              "value": false
-            }
-          ],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Draggable",
-              "type": "DraggableBehavior::Draggable",
-              "checkCollisionMask": false
-            }
-          ],
-          "animations": [
-            {
-              "name": "idle",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "assets/archer-without-arrow.png",
-                      "points": [
-                        {
-                          "name": "Top",
-                          "x": 62,
-                          "y": 25.5
-                        },
-                        {
-                          "name": "Bottom",
-                          "x": 62,
-                          "y": 89.5
-                        },
-                        {
-                          "name": "ArrowStart",
-                          "x": 58,
-                          "y": 44
-                        }
-                      ],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": false,
-                        "name": "centre",
-                        "x": 62,
-                        "y": 62
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 124
-                          },
-                          {
-                            "x": 0,
-                            "y": 124
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "shooting",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.15,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "shooting2",
-                      "points": [
-                        {
-                          "name": "Top",
-                          "x": 62,
-                          "y": 25.5
-                        },
-                        {
-                          "name": "Bottom",
-                          "x": 62,
-                          "y": 89.5
-                        },
-                        {
-                          "name": "ArrowStart",
-                          "x": 58,
-                          "y": 44
-                        }
-                      ],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": false,
-                        "name": "centre",
-                        "x": 62,
-                        "y": 62
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 124
-                          },
-                          {
-                            "x": 0,
-                            "y": 124
-                          }
-                        ]
-                      ]
-                    },
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "shooting",
-                      "points": [
-                        {
-                          "name": "Top",
-                          "x": 62,
-                          "y": 25.5
-                        },
-                        {
-                          "name": "Bottom",
-                          "x": 62,
-                          "y": 89.5
-                        },
-                        {
-                          "name": "ArrowStart",
-                          "x": 58,
-                          "y": 44
-                        }
-                      ],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": false,
-                        "name": "centre",
-                        "x": 62,
-                        "y": 62
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 124
-                          },
-                          {
-                            "x": 0,
-                            "y": 124
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "loaded",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "assets/archer-loaded.png",
-                      "points": [
-                        {
-                          "name": "Top",
-                          "x": 62,
-                          "y": 25.5
-                        },
-                        {
-                          "name": "Bottom",
-                          "x": 62,
-                          "y": 89.5
-                        },
-                        {
-                          "name": "ArrowStart",
-                          "x": 58,
-                          "y": 44
-                        }
-                      ],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": false,
-                        "name": "centre",
-                        "x": 62,
-                        "y": 62
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 0
-                          },
-                          {
-                            "x": 117,
-                            "y": 124
-                          },
-                          {
-                            "x": 0,
-                            "y": 124
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
         {
           "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
@@ -1134,9 +1136,6 @@
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "Archer"
-          },
-          {
             "objectName": "RedBalloon"
           }
         ]
@@ -1160,7 +1159,7 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "archerXPosition",
+                "ArcherXPosition",
                 "=",
                 "Archer.X()"
               ]
@@ -1229,10 +1228,19 @@
           "target": "HudEvents"
         },
         {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "ArcherEvents"
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "disabled": true,
+          "folded": true,
           "name": "Archer",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1318,7 +1326,7 @@
                   "parameters": [
                     "Archer",
                     "=",
-                    "archerXPosition"
+                    "ArcherXPosition"
                   ]
                 }
               ],
@@ -2405,6 +2413,22 @@
               "value": 100
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Archer",
+          "persistentUuid": "a3ce830f-77b3-4b20-9479-2c329918a2d1",
+          "width": 0,
+          "x": 10,
+          "y": 146,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -2849,6 +2873,16 @@
           "actions": [
             {
               "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ArcherXPosition",
+                "=",
+                "Archer.X()"
+              ]
+            },
+            {
+              "type": {
                 "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
               },
               "parameters": [
@@ -2877,6 +2911,13 @@
             "includeConfig": 0
           },
           "target": "HudEvents"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "ArcherEvents"
         },
         {
           "colorB": 228,
@@ -3548,6 +3589,366 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Level_1",
+      "name": "ArcherEvents",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Archer",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Right\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ArrowsLeft",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Arrow",
+                    "Archer.PointX(\"ArrowStart\")",
+                    "Archer.PointY(\"ArrowStart\")",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Animation",
+                    "=",
+                    "\"loaded\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DraggableBehavior::Dragged"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Draggable"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "=",
+                    "ArcherXPosition"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "Archer",
+                        "<",
+                        "30"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetY"
+                      },
+                      "parameters": [
+                        "Archer",
+                        "=",
+                        "30"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "Archer.PointY(\"Bottom\")",
+                        ">",
+                        "SceneWindowHeight()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetY"
+                      },
+                      "parameters": [
+                        "Archer",
+                        "-",
+                        "Archer.PointY(\"Bottom\") - SceneWindowHeight()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "Arrow",
+                        "released",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetXY"
+                      },
+                      "parameters": [
+                        "Arrow",
+                        "=",
+                        "Archer.PointX(\"ArrowStart\")",
+                        "=",
+                        "Archer.PointY(\"ArrowStart\")"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "test area"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Animation",
+                    "=",
+                    "\"shooting\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::Name"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Animation",
+                    "=",
+                    "\"shooting\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Animation"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "readyToShoot",
+                    "True",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "readyToShoot",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "DraggableBehavior::Dragged"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Draggable"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    "released",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ArrowsLeft",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "Animation",
+                    "=",
+                    "\"idle\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Archer",
+                    "readyToShoot",
+                    "False",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ]
     }
