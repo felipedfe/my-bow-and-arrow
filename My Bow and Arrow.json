@@ -216,6 +216,30 @@
         "name": "assets/yellow-balloon-down.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/down2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "down2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/down3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "down3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "slime.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "slime.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -821,6 +845,7 @@
     },
     {
       "name": "ArcherXPosition",
+      "persistentUuid": "fd7edbb3-2f31-4947-b609-5fcfe31359b4",
       "type": "number",
       "value": 20
     },
@@ -846,6 +871,11 @@
           "persistentUuid": "ace90bec-f5cc-46bf-9418-aae8bae35d6d",
           "type": "number",
           "value": 15
+        },
+        {
+          "name": "3",
+          "type": "number",
+          "value": 35
         }
       ]
     },
@@ -1239,357 +1269,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "disabled": true,
           "folded": true,
-          "name": "Archer",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "MouseButtonFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Right\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "IsCursorOnObject"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "ArrowsLeft",
-                    ">",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Arrow",
-                    "Archer.PointX(\"ArrowStart\")",
-                    "Archer.PointY(\"ArrowStart\")",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Animation",
-                    "=",
-                    "\"loaded\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "DraggableBehavior::Dragged"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Draggable"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetX"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "=",
-                    "ArcherXPosition"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "PosY"
-                      },
-                      "parameters": [
-                        "Archer",
-                        "<",
-                        "30"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetY"
-                      },
-                      "parameters": [
-                        "Archer",
-                        "=",
-                        "30"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareNumbers"
-                      },
-                      "parameters": [
-                        "Archer.PointY(\"Bottom\")",
-                        ">",
-                        "SceneWindowHeight()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetY"
-                      },
-                      "parameters": [
-                        "Archer",
-                        "-",
-                        "Archer.PointY(\"Bottom\") - SceneWindowHeight()"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanObjectVariable"
-                      },
-                      "parameters": [
-                        "Arrow",
-                        "released",
-                        "False",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetXY"
-                      },
-                      "parameters": [
-                        "Arrow",
-                        "=",
-                        "Archer.PointX(\"ArrowStart\")",
-                        "=",
-                        "Archer.PointY(\"ArrowStart\")"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "test area"
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "MouseButtonFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Left\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "IsCursorOnObject"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Animation",
-                    "=",
-                    "\"shooting\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::Name"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Animation",
-                    "=",
-                    "\"shooting\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Animation"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "readyToShoot",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "readyToShoot",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "DraggableBehavior::Dragged"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Draggable"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Arrow",
-                    "released",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "ArrowsLeft",
-                    "-",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "Animation",
-                    "=",
-                    "\"idle\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Archer",
-                    "readyToShoot",
-                    "False",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
           "name": "Balloon",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2155,7 +1835,7 @@
           "name": "RedBalloon",
           "persistentUuid": "a69254fc-c725-4840-a558-541f661a27a5",
           "width": 33,
-          "x": 271,
+          "x": 254,
           "y": 752,
           "zOrder": 1,
           "numberProperties": [],
@@ -2172,7 +1852,7 @@
           "name": "RedBalloon",
           "persistentUuid": "ea1e8051-c190-447a-af97-25a522caa584",
           "width": 33,
-          "x": 321,
+          "x": 304,
           "y": 793,
           "zOrder": 2,
           "numberProperties": [],
@@ -2189,7 +1869,7 @@
           "name": "RedBalloon",
           "persistentUuid": "ccb80030-43ff-43da-ba06-2ddd0e866af9",
           "width": 33,
-          "x": 351,
+          "x": 334,
           "y": 769,
           "zOrder": 3,
           "numberProperties": [],
@@ -2206,7 +1886,7 @@
           "name": "RedBalloon",
           "persistentUuid": "a41eedb1-8248-4b3c-8c85-638b6222bee9",
           "width": 33,
-          "x": 383,
+          "x": 366,
           "y": 794,
           "zOrder": 4,
           "numberProperties": [],
@@ -2223,7 +1903,7 @@
           "name": "RedBalloon",
           "persistentUuid": "651f3997-f6d6-4456-9afb-0d8315ceb659",
           "width": 33,
-          "x": 417,
+          "x": 400,
           "y": 608,
           "zOrder": 5,
           "numberProperties": [],
@@ -2240,7 +1920,7 @@
           "name": "RedBalloon",
           "persistentUuid": "2b7664c8-db4e-4719-a330-d75ac24684ce",
           "width": 33,
-          "x": 471,
+          "x": 439,
           "y": 673,
           "zOrder": 6,
           "numberProperties": [],
@@ -2257,7 +1937,7 @@
           "name": "RedBalloon",
           "persistentUuid": "1a29c816-ac52-4201-abae-1459c3794ffd",
           "width": 33,
-          "x": 532,
+          "x": 482,
           "y": 749,
           "zOrder": 7,
           "numberProperties": [],
@@ -2274,7 +1954,7 @@
           "name": "RedBalloon",
           "persistentUuid": "20d12038-d342-4956-b312-7237ff562202",
           "width": 33,
-          "x": 568,
+          "x": 518,
           "y": 770,
           "zOrder": 8,
           "numberProperties": [],
@@ -2291,7 +1971,7 @@
           "name": "RedBalloon",
           "persistentUuid": "a93187aa-27d5-472d-88fd-82e8b9461fc8",
           "width": 33,
-          "x": 598,
+          "x": 548,
           "y": 744,
           "zOrder": 9,
           "numberProperties": [],
@@ -2308,7 +1988,7 @@
           "name": "RedBalloon",
           "persistentUuid": "3ce325a9-dae4-4bd2-837c-553905348eb2",
           "width": 33,
-          "x": 640,
+          "x": 615,
           "y": 607,
           "zOrder": 10,
           "numberProperties": [],
@@ -2325,8 +2005,8 @@
           "name": "RedBalloon",
           "persistentUuid": "dba5ff36-d3f2-45e4-92c4-9cb86f126886",
           "width": 33,
-          "x": 694,
-          "y": 748,
+          "x": 659,
+          "y": 747,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -2342,8 +2022,8 @@
           "name": "RedBalloon",
           "persistentUuid": "74d85ebf-0377-4da1-abbc-9e6c82f8dac1",
           "width": 33,
-          "x": 747,
-          "y": 787,
+          "x": 729,
+          "y": 785,
           "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
@@ -2359,8 +2039,8 @@
           "name": "YellowBalloon",
           "persistentUuid": "8dc79142-64c5-4cc9-9d92-f1b6086e710e",
           "width": 33,
-          "x": 594,
-          "y": 620,
+          "x": 578,
+          "y": 710,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -2376,7 +2056,7 @@
           "name": "YellowBalloon",
           "persistentUuid": "1210e486-ec69-4eb0-b3ee-bcec40774c58",
           "width": 33,
-          "x": 705,
+          "x": 688,
           "y": 643,
           "zOrder": 14,
           "numberProperties": [],
@@ -2732,7 +2412,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets/yellow-balloon-down.png",
+                      "image": "down2",
                       "points": [
                         {
                           "name": "Bottom",
@@ -2784,7 +2464,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets/yellow-balloon-down.png",
+                      "image": "down3",
                       "points": [
                         {
                           "name": "Bottom",
@@ -2918,6 +2598,109 @@
             "includeConfig": 0
           },
           "target": "ArcherEvents"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "ArrowEnvents"
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Arrow",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "aiGeneratedEventId": "01M1Y1NJ0CMBR1ZCWMK4ZHZYZD",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    "YellowBalloon",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "YellowBalloon",
+                    "state",
+                    "=",
+                    "BalloonState.Up"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringObjectVariable"
+                  },
+                  "parameters": [
+                    "YellowBalloon",
+                    "state",
+                    "=",
+                    "BalloonState.Hit"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M1Y1NJ0CMBR1ZCWMK4ZHZYZD",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    "RedBalloon",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "RedBalloon",
+                    "state",
+                    "=",
+                    "BalloonState.Up"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringObjectVariable"
+                  },
+                  "parameters": [
+                    "RedBalloon",
+                    "state",
+                    "=",
+                    "BalloonState.Hit"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         },
         {
           "colorB": 228,
@@ -3084,11 +2867,6 @@
           "parameters": []
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -3140,7 +2918,7 @@
                             "value": "BuiltinCommonInstructions::CompareNumbers"
                           },
                           "parameters": [
-                            "RedBalloon.PointY(\"Bottom\")",
+                            "YellowBalloon.PointY(\"Bottom\")",
                             "<",
                             "0"
                           ]
@@ -3154,7 +2932,7 @@
                           "parameters": [
                             "YellowBalloon",
                             "=",
-                            "SceneWindowHeight() + 70"
+                            "SceneWindowHeight()"
                           ]
                         }
                       ]
@@ -3187,7 +2965,7 @@
                   "parameters": [
                     "YellowBalloon",
                     "=",
-                    "RedBalloon.Y() + 100 * TimeDelta()"
+                    "YellowBalloon.Y() + 100 * TimeDelta()"
                   ]
                 }
               ],
@@ -3200,7 +2978,7 @@
                         "value": "StringObjectVariable"
                       },
                       "parameters": [
-                        "RedBalloon",
+                        "YellowBalloon",
                         "state",
                         "=",
                         "BalloonState.Hit"
@@ -3229,7 +3007,7 @@
                         "value": "PosY"
                       },
                       "parameters": [
-                        "RedBalloon",
+                        "YellowBalloon",
                         ">",
                         "SceneWindowHeight()"
                       ]
@@ -3251,11 +3029,6 @@
             }
           ],
           "parameters": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
         }
       ],
       "layers": [
@@ -3340,6 +3113,313 @@
           "renderingType": "",
           "visibility": true,
           "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        }
+      ]
+    },
+    {
+      "b": 46,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Level_953",
+      "name": "Level_3",
+      "r": 0,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 188,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.875,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Archer",
+          "persistentUuid": "ee261488-7b1b-4f92-a851-ed2f69e56c05",
+          "width": 0,
+          "x": 10,
+          "y": 124,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Slime",
+          "persistentUuid": "0e05bb74-400f-496a-bfd4-d9fbae5f3792",
+          "width": 0,
+          "x": 553,
+          "y": 220,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Slime",
+          "persistentUuid": "1ad60af3-eb75-478e-89b5-66c3a14ac351",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "slime.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 39,
+                            "y": 0
+                          },
+                          {
+                            "x": 39,
+                            "y": 49
+                          },
+                          {
+                            "x": 0,
+                            "y": 49
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Slime"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ArcherXPosition",
+                "=",
+                "Archer.X()"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+              },
+              "parameters": [
+                "",
+                "\"Hud\"",
+                "0",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentLevel",
+                "=",
+                "3"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "HudEvents"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "ArcherEvents"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "ArrowEnvents"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
@@ -3949,6 +4029,78 @@
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Level_1",
+      "name": "ArrowEnvents",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Arrow",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    "released",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    "=",
+                    "Arrow.X() + 230 * TimeDelta()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    ">",
+                    "SceneWindowWidth()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ]
     }
