@@ -25,7 +25,7 @@
     "author": "",
     "windowWidth": 800,
     "windowHeight": 600,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "/Users/felipefernandes/Desktop/build-bow-and-arrow-2",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
@@ -262,6 +262,30 @@
         "kind": "image",
         "metadata": "",
         "name": "butterfly_bubled.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "butterfly.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "butterfly.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewPanelSprite2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "NewPanelSprite2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewPanelSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/NewPanelSprite.png\"}",
+        "name": "NewPanelSprite",
         "smoothed": true,
         "userAdded": false
       }
@@ -788,6 +812,23 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 0,
+      "height": 32,
+      "leftMargin": 0,
+      "name": "HudPanelBg",
+      "persistentUuid": "f3124b51-68ed-40d5-9088-81eb86ae2fe7",
+      "rightMargin": 0,
+      "texture": "NewPanelSprite",
+      "tiled": false,
+      "topMargin": 0,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
     }
   ],
   "objectsFolderStructure": {
@@ -795,6 +836,9 @@
     "children": [
       {
         "objectName": "HudBg"
+      },
+      {
+        "objectName": "HudPanelBg"
       },
       {
         "objectName": "Level"
@@ -816,7 +860,7 @@
   "objectsGroups": [],
   "variables": [
     {
-      "name": "BalloonState",
+      "name": "FloatingObjectState",
       "persistentUuid": "2d80e637-d078-45d4-b9f6-ed42d72ce96b",
       "type": "structure",
       "children": [
@@ -825,6 +869,12 @@
           "persistentUuid": "b989f8f2-ec53-4d29-9b93-4d5aefc123a0",
           "type": "string",
           "value": "dead"
+        },
+        {
+          "name": "Down",
+          "persistentUuid": "b8eb3b5e-78f0-4684-a2b0-7938a8384ab6",
+          "type": "string",
+          "value": "down"
         },
         {
           "name": "Hit",
@@ -987,7 +1037,7 @@
           "name": "startBalloonXPos",
           "persistentUuid": "2f65d754-18cb-4343-a41b-a827e564afe3",
           "type": "number",
-          "value": 730
+          "value": 745
         },
         {
           "name": "levelStartBalloons",
@@ -1283,7 +1333,7 @@
                   "parameters": [
                     "startBalloonXPos",
                     "=",
-                    "startBalloonXPos - RedBalloon.Width()"
+                    "startBalloonXPos - RedBalloon.Width() - 1.5"
                   ]
                 }
               ]
@@ -1325,7 +1375,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Up"
+                    "FloatingObjectState.Up"
                   ]
                 }
               ],
@@ -1383,7 +1433,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Hit"
+                    "FloatingObjectState.Hit"
                   ]
                 }
               ],
@@ -1411,7 +1461,7 @@
                         "RedBalloon",
                         "state",
                         "=",
-                        "BalloonState.Hit"
+                        "FloatingObjectState.Hit"
                       ]
                     }
                   ],
@@ -1521,7 +1571,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Up"
+                    "FloatingObjectState.Up"
                   ]
                 }
               ],
@@ -1534,7 +1584,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Hit"
+                    "FloatingObjectState.Hit"
                   ]
                 }
               ]
@@ -1569,104 +1619,84 @@
           "parameters": []
         },
         {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Stage end"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Stage end",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "SceneInstancesCount"
-              },
-              "parameters": [
-                "RedBalloon.VariableChildCount()",
-                "RedBalloon",
-                "=",
-                "0"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "RedBalloon",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Level_2\"",
+                    ""
+                  ]
+                }
               ]
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "HudArrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "Arrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "RedBalloon",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "DebuggerTools::ConsoleLog"
-              },
-              "parameters": [
-                "\"STAGE OVER\"",
-                "\"info\"",
-                "\"\""
-              ]
-            },
-            {
-              "type": {
-                "value": "Scene"
-              },
-              "parameters": [
-                "",
-                "\"Level_2\"",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SceneInstancesCount"
-              },
-              "parameters": [
-                "RedBalloon.VariableChildCount()",
-                "HudArrow",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SceneInstancesCount"
-              },
-              "parameters": [
-                "RedBalloon.VariableChildCount()",
-                "Arrow",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SceneInstancesCount"
-              },
-              "parameters": [
-                "RedBalloon.VariableChildCount()",
-                "RedBalloon",
-                ">",
-                "0"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "DebuggerTools::ConsoleLog"
-              },
-              "parameters": [
-                "\"GAME OVERRRRR\"",
-                "\"\"",
-                "\"\""
-              ]
-            }
-          ]
+          "parameters": []
         }
       ],
       "layers": [
@@ -2664,7 +2694,7 @@
                     "YellowBalloon",
                     "state",
                     "=",
-                    "BalloonState.Up"
+                    "FloatingObjectState.Up"
                   ]
                 }
               ],
@@ -2677,7 +2707,7 @@
                     "YellowBalloon",
                     "state",
                     "=",
-                    "BalloonState.Hit"
+                    "FloatingObjectState.Hit"
                   ]
                 }
               ]
@@ -2706,7 +2736,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Up"
+                    "FloatingObjectState.Up"
                   ]
                 }
               ],
@@ -2719,7 +2749,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Hit"
+                    "FloatingObjectState.Hit"
                   ]
                 }
               ]
@@ -2754,7 +2784,7 @@
                         "RedBalloon",
                         "state",
                         "=",
-                        "BalloonState.Up"
+                        "FloatingObjectState.Up"
                       ]
                     }
                   ],
@@ -2814,7 +2844,7 @@
                     "RedBalloon",
                     "state",
                     "=",
-                    "BalloonState.Hit"
+                    "FloatingObjectState.Hit"
                   ]
                 }
               ],
@@ -2842,7 +2872,7 @@
                         "RedBalloon",
                         "state",
                         "=",
-                        "BalloonState.Hit"
+                        "FloatingObjectState.Hit"
                       ]
                     }
                   ],
@@ -2918,7 +2948,7 @@
                         "YellowBalloon",
                         "state",
                         "=",
-                        "BalloonState.Up"
+                        "FloatingObjectState.Up"
                       ]
                     }
                   ],
@@ -2978,7 +3008,7 @@
                     "YellowBalloon",
                     "state",
                     "=",
-                    "BalloonState.Hit"
+                    "FloatingObjectState.Hit"
                   ]
                 }
               ],
@@ -3006,7 +3036,7 @@
                         "YellowBalloon",
                         "state",
                         "=",
-                        "BalloonState.Hit"
+                        "FloatingObjectState.Hit"
                       ]
                     }
                   ],
@@ -3054,6 +3084,91 @@
             }
           ],
           "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Stage end",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "RedBalloon",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Level_3\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "HudArrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "Arrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "RedBalloon",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ],
       "layers": [
@@ -3230,17 +3345,425 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.875,
+        "zoomFactor": 1.3920372575771656,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
       },
       "objectsGroups": [],
       "variables": [],
-      "instances": [],
-      "objects": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.79999999999999,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "6d3c53db-9add-449e-af41-cf8180e4bd9b",
+          "width": 42,
+          "x": 264,
+          "y": 320,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.79999999999999,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "c0ff87be-f69e-4a7f-bca4-7fbc759acb96",
+          "width": 42,
+          "x": 344,
+          "y": 77,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "down"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.79999999999999,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "866e6234-d89a-439d-8014-edbda7ebe605",
+          "width": 42,
+          "x": 384,
+          "y": 436,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "b7d7d38a-62af-4630-9e73-91905f1e4a56",
+          "width": 42,
+          "x": 422,
+          "y": 239,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "down"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "9fadabaf-fbcf-46a1-a482-b09a0bf788ce",
+          "width": 42,
+          "x": 461,
+          "y": 239,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "down"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "35e2ea35-8068-456f-9a45-8b618bf1c79f",
+          "width": 42,
+          "x": 540,
+          "y": 455,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "3770e2d3-1fed-4d5f-a5e6-a236e5519d28",
+          "width": 42,
+          "x": 580,
+          "y": 312,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "8fb09a8d-eb0e-4ec8-9674-f6dd9bf71b24",
+          "width": 42,
+          "x": 618,
+          "y": 21,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "down"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "6ea51e55-fe6c-4483-85d6-e00d95067ca2",
+          "width": 42,
+          "x": 655,
+          "y": 407,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "f7c2deb6-71be-483d-91d1-999d6f85370a",
+          "width": 42,
+          "x": 303,
+          "y": 73,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "down"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "2e9e1d73-2d22-4a20-9078-a1910731e3f6",
+          "width": 42,
+          "x": 500,
+          "y": 103,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "bbb91821-c27b-4c49-99c8-437ff4b35e88",
+          "width": 42,
+          "x": 692,
+          "y": 517,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "down"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 44.8,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Bubble",
+          "persistentUuid": "340d2d42-1282-49dd-a3e0-206bcfa656c5",
+          "width": 42,
+          "x": 730,
+          "y": 226,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Bubble",
+          "persistentUuid": "95ca772a-f376-4476-a2ab-46bcb34f1756",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "state",
+              "persistentUuid": "0b65d2d3-29ee-475e-a166-49e6162af0d2",
+              "type": "string",
+              "value": "up"
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "butterfly_bubled.png",
+                      "points": [
+                        {
+                          "name": "Top",
+                          "x": 15,
+                          "y": 0
+                        },
+                        {
+                          "name": "Bottom",
+                          "x": 15,
+                          "y": 32
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 30,
+                            "y": 0
+                          },
+                          {
+                            "x": 30,
+                            "y": 32
+                          },
+                          {
+                            "x": 0,
+                            "y": 32
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hit",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "butterfly.png",
+                      "points": [
+                        {
+                          "name": "Top",
+                          "x": 15,
+                          "y": 0
+                        },
+                        {
+                          "name": "Bottom",
+                          "x": 15,
+                          "y": 32
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 30,
+                            "y": 0
+                          },
+                          {
+                            "x": 30,
+                            "y": 32
+                          },
+                          {
+                            "x": 0,
+                            "y": 32
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "objectsFolderStructure": {
-        "folderName": "__ROOT"
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Bubble"
+          }
+        ]
       },
       "events": [
         {
@@ -3312,6 +3835,340 @@
             "includeConfig": 0
           },
           "target": "ArrowEvents"
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Collision",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "aiGeneratedEventId": "01M1Y1NJ0CMBR1ZCWMK4ZHZYZD",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Arrow",
+                    "Bubble",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringObjectVariable"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "state",
+                    "=",
+                    "FloatingObjectState.Hit"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "Animation",
+                    "=",
+                    "\"Hit\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Bubble States",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "state",
+                    "=",
+                    "FloatingObjectState.Up"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "=",
+                    "Bubble.Y() - 100 * TimeDelta()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "Bubble",
+                        "<",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetY"
+                      },
+                      "parameters": [
+                        "Bubble",
+                        "=",
+                        "SceneWindowHeight()"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M1Y468MJ5S9M5FHJ97NW3HXY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "state",
+                    "=",
+                    "FloatingObjectState.Down"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "=",
+                    "Bubble.Y() + 100 * TimeDelta()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "Bubble",
+                        ">",
+                        "SceneWindowHeight()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetY"
+                      },
+                      "parameters": [
+                        "Bubble",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M1Y468MJ5S9M5FHJ97NW3HXY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringObjectVariable"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "state",
+                    "=",
+                    "FloatingObjectState.Hit"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "=",
+                    "Bubble.Y() - 100 * TimeDelta()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Bubble",
+                    "=",
+                    "Bubble.X() - 100 * TimeDelta()"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "Bubble",
+                        "<",
+                        "20"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Bubble",
+                        "="
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Stage end",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "Bubble",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Level_4\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "HudArrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "Arrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "Bubble",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": []
+            }
+          ],
+          "parameters": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -4034,8 +4891,91 @@
                 "Archer",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "PushScene"
+              },
+              "parameters": [
+                "",
+                "\"Level_4\""
+              ]
             }
           ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "disabled": true,
+          "name": "Stage end",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "RedBalloon",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "HudArrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "Arrow",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "RedBalloon.VariableChildCount()",
+                    "RedBalloon",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ],
       "layers": [
@@ -4198,7 +5138,16 @@
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
@@ -4211,33 +5160,6 @@
                 "\"Level\" + \" \" + ToString(CurrentLevel)"
               ]
             },
-            {
-              "type": {
-                "value": "PrimitiveDrawing::Rectangle"
-              },
-              "parameters": [
-                "HudBg",
-                "0",
-                "0",
-                "SceneWindowWidth()",
-                "60"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SceneJustBegins"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -4283,7 +5205,7 @@
                     "",
                     "HudArrow",
                     "ArrowHudStartPosX",
-                    "35",
+                    "33",
                     "\"UI\""
                   ]
                 },
@@ -4305,7 +5227,7 @@
                   "parameters": [
                     "HudArrow",
                     "=",
-                    "5"
+                    "83"
                   ]
                 },
                 {
@@ -4813,23 +5735,6 @@
       "instances": [
         {
           "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 67,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "HudBg",
-          "persistentUuid": "ff1c9f61-9488-4ef5-8f69-8c9c67d5f3c2",
-          "width": 800,
-          "x": 0,
-          "y": 0,
-          "zOrder": 2,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
@@ -4839,23 +5744,23 @@
           "width": 0,
           "x": 354,
           "y": 7,
-          "zOrder": 3,
+          "zOrder": 81,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "Score",
-          "persistentUuid": "5affa5f4-6099-4bf4-9380-157f20659291",
-          "width": 0,
-          "x": -114,
-          "y": 8,
-          "zOrder": 3,
+          "customSize": true,
+          "depth": 0,
+          "height": 67,
+          "layer": "",
+          "name": "HudPanelBg",
+          "persistentUuid": "d44ba9ac-17d5-4c80-b2e7-cc5dedbdd6e8",
+          "width": 800,
+          "x": 0,
+          "y": -8,
+          "zOrder": 80,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4873,7 +5778,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.875,
+        "zoomFactor": 1.302700992593585,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
